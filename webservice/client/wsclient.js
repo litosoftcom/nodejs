@@ -18,7 +18,7 @@ var data = JSON.stringify({
 var options = {
     host : 'localhost',
     port : '8001',
-    path : '/TestWS/TestGetNumber',
+    path : '/TestWS/TestGetNumber?Count=1',
     method : 'GET',
     headers: {
         'Content-type':'application/json'
@@ -40,7 +40,7 @@ var req = http.request(options,function(res){
         var arrDataPoints = datapoints.DataArray;
         console.log('Datapoint in array :',arrDataPoints[3]);
     
-        var dpA = datapoints.Group.A;
+        var dpA = datapoints.Group["A"];
         console.log('Datapoint in cluster :',dpA);
 
         arrDataPoints.forEach(function(element) {
